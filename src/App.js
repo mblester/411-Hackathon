@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import Header from "./Header";
+import Body from "./Body";
 
 function App() {
+  const [list, setList] = useState([]);
+
+  useEffect(() => {
+    fetch("http://hn.algolia.com/api/v1/search?tags=front_page")
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data.hits);
+        setList(data.hits);
+      });
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Body list={list} />
     </div>
   );
 }
