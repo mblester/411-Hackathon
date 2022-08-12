@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 .App {
   text-align: center;
 }
@@ -81,4 +84,70 @@ body {
 
 .Settings {
   margin-top: 12px;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  width: 100%;
+  margin: 0;
+  overflow-y: scroll;
+}
+
+.div-display-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: left;
+  width: 90%;
+}
+
+.story-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  /* align-items: left; */
+}
+
+.header-url-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+h3 {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.url {
+  align-self: flex-end;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: lightslategray;
+  margin-left: 5px;
+}
+
+.url:hover {
+  text-decoration: underline;
+}
+
+.story-bar {
+  display: flex;
+  justify-content: flex-start;
+  text-decoration: none;
+}
+
+.story-bar a {
+  align-self: flex-start;
+  text-decoration: none;
+  font-size: 10px;
+  color: lightslategray;
+}
+
+.story-bar a:not(:first-child) {
+  margin-left: 4px;
 }
