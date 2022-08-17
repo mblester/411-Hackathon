@@ -12,7 +12,7 @@ export default function Header({state, setState}) {
             </a>
           </span>
           <div class="SearchHeader_label">
-            Search<br></br> Hacker News
+            Search <br></br> Hacker News
           </div>
           <div class="SearchHeader_container">
             <span class="SearchIcon">
