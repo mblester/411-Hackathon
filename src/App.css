@@ -43,14 +43,12 @@ body {
 }
 
 .SearchHeader_label {
-  font-size: larger;
+  font-size: large;
   text-align: left;
-  margin-right: 10px;
 }
 
 .SearchHeader_container {
   background-color: white;
-  margin-right: 16px;
   width: 100%;
 }
 
@@ -63,6 +61,8 @@ body {
   padding: 16px 144px 16px 54px;
   font-weight: 300;
   color: rgba(0, 0, 0, 0.75);
+  font-size: medium;
+  margin-top: 5px;
 }
 
 .SearchInput:focus{
@@ -73,7 +73,7 @@ body {
   background-color: white;
   position: absolute;
   margin-left: 15px;
-  margin-top: 10px;
+  margin-top: 15px;
   color: #ff742b;
   font-size: 24px;
   pointer-events: none;
@@ -81,10 +81,13 @@ body {
 
 .SearchHeader_settings {
   color: black;
+  font-size: 20px;
+  margin-top: 10px;
 }
 
 .SearchHeader_settings svg {
   margin: 8px;
+  margin-left: 20px;
 }
 
 .Settings {
