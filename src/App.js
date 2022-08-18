@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Header from "./Header";
 import Body from "./Body";
+import { Pagination } from "./Pagination";
 import SelectMenu from "./SelectMenu";
 
 function App() {
@@ -70,12 +71,20 @@ function App() {
   return (
     <div>
       <Header state={searchInput} setState={setSearchInput} />
+      
       <SelectMenu
         setType={setType}
         setDate={setDate}
         setTimeOrPop={setTimeOrPop}
       />
-      <Body list={list} type={type} date={date} timeOrPop={timeOrPop} />
+      <Body
+        list={list}
+        type={type}
+        date={date}
+        timeOrPop={timeOrPop}
+      />
+      <Pagination />
+
     </div>
   );
 }
