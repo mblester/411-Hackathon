@@ -17,7 +17,7 @@ function App() {
 
     if (searchInput) {
       fetch(
-        `http://hn.algolia.com/api/v1/${timeOrPop}?tags=${type}&query=${searchInput}&numericFilters=created_at_i>0,created_at_i<${date}`
+        `http://hn.algolia.com/api/v1/${timeOrPop}?query=${searchInput}&tags=${type}&numericFilters=created_at_i>0,created_at_i<${date}`
       )
         .then((response) => {
           return response.json();
