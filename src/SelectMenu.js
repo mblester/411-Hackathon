@@ -11,13 +11,18 @@ export default function SelectMenu({
   return (
     <div className="select-menu">
       <label>Search </label>
-      <select onChange={(e) => setType(e.target.value)} name="storiesComments">
+      <select
+        className="select"
+        onChange={(e) => setType(e.target.value)}
+        name="storiesComments"
+      >
         <option value="story">All</option>
         <option value="story">Stories</option>
         <option value="comment">Comments</option>
       </select>
       <label> by </label>
       <select
+        className="select"
         onChange={(e) => setTimeOrPop(e.target.value)}
         name="popularityDate"
       >
@@ -25,7 +30,11 @@ export default function SelectMenu({
         <option value="Date">Date</option>
       </select>
       <label> for </label>
-      <select onChange={(e) => setDate(e.target.value)} name="time">
+      <select
+        className="select"
+        onChange={(e) => setDate(e.target.value)}
+        name="time"
+      >
         <option value="all">All time</option>
         <option value="last24h">Last 24h</option>
         <option value="pastWeek">Past Week</option>
