@@ -78,9 +78,7 @@ function App() {
   return (
     <div className="App">
       <Header state={searchInput} setState={setSearchInput} />
-
-      <Body list={list} />
-      <Pagination />
+      
       <SelectMenu
         setType={setType}
         setDate={setDate}
@@ -93,6 +91,7 @@ function App() {
         timeOrPop={timeOrPop}
         setDate={setDate}
       />
+      <Pagination />
     </div>
   );
 }
