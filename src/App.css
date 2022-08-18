@@ -111,7 +111,6 @@ body {
   margin-top: 10px;
   margin-right: 0;
   margin-left: 4.9%;
-  display: flex;
 
   /* align-items: center;
   font-size: 14px;
@@ -209,4 +208,10 @@ h3 {
 
 button{
   border: 1px solid gainsboro;
+}
+
+@media (max-width: 900px) {
+  .SearchInput::placeholder{
+    color: transparent;
+  }
 }
