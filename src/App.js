@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Header from "./Header";
 import Body from "./Body";
+import { Pagination } from "./Pagination";
 
 function App() {
   const [list, setList] = useState([]);
@@ -33,6 +34,7 @@ function App() {
     <div className="App">
       <Header state={searchInput} setState={setSearchInput} />
       <Body list={list} />
+      <Pagination />
     </div>
   );
 }

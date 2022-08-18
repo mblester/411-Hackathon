@@ -159,3 +159,31 @@ h3 {
 .story-bar a:not(:first-child) {
   margin-left: 4px;
 }
+
+.Pagination{
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.Pagination button{
+  background-color: #f6f6ef;;
+  margin: 2px;
+  padding: 5px;
+  height: 30px;
+  width: 35px;
+}
+
+.Pagination_item button{
+  border-radius: 5px;
+  stroke: none;
+}
+
+.Pagination_item-current button {
+  color: #ff742b;
+  border: 1px solid #ff742b;
+}
+
+button{
+  border: 1px solid gainsboro;
+}
