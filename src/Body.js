@@ -7,7 +7,8 @@ export default function Body(props) {
   return (
     <div className="app-container">
       {props.list.map((item, index) => {
-        const time = moment(item.created_at).fromNow();
+        let time = moment(item.created_at).fromNow();
+        console.log(new Date(item.created_at).getTime(), Date.now());
         return (
           <div className="div-display-container" key={index}>
             <article className="story-container">

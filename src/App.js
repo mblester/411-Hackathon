@@ -10,6 +10,7 @@ function App() {
   const [date, setDate] = useState("all");
   const [timeOrPop, setTimeOrPop] = useState("Popularity");
   const [type, setType] = useState("story");
+  // const [timeStamp, setTimeStamp] = useState[0];
 
   let search = "";
   let timeStampG = 0;
@@ -20,22 +21,22 @@ function App() {
     search = "search_by_date";
   } else search = "search";
 
-  if (date === "all") {
-    timeStampL = 0;
-    timeStampG = 31536000000;
-  } else if (date === "last24h") {
-    timeStampL = 0;
-    timeStampG = 86400;
-  } else if (date === "pastWeek") {
-    timeStampL = 86400;
-    timeStampG = 604800;
-  } else if (date === "pastMonth") {
-    timeStampL = 604800;
-    timeStampG = 2630000;
-  } else if (date === "pastYear") {
-    timeStampL = 2630000;
-    timeStampG = 31536000;
-  }
+  // if (date === "all") {
+  //   timeStampL = 0;
+  //   timeStampG = 31536000000;
+  // } else if (date === "last24h") {
+  //   timeStampL = 0;
+  //   timeStampG = 86400;
+  // } else if (date === "pastWeek") {
+  //   timeStampL = 86400;
+  //   timeStampG = 604800;
+  // } else if (date === "pastMonth") {
+  //   timeStampL = 604800;
+  //   timeStampG = 2630000;
+  // } else if (date === "pastYear") {
+  //   timeStampL = 2630000;
+  //   timeStampG = 31536000;
+  // }
 
   useEffect(() => {
     console.log(
@@ -43,7 +44,7 @@ function App() {
       type,
       timeOrPop,
       searchInput,
-      search,
+      // timeStamp,
       timeStampL,
       timeStampG
     );
@@ -60,22 +61,33 @@ function App() {
           console.log(data.hits);
           setList(data.hits);
         });
+    } else {
+      fetch(
+        `http://hn.algolia.com/api/v1/${search}?tags=${tag}&numericFilters=created_at_i>${timeStampL}`
+        // `http://hn.algolia.com/api/v1/${search}?tags=${tag}&query=${searchInput}&numericFilters=created_at_i>${timeStampL},created_at_i<${timeStampG}`
+      )
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          console.log(data.hits);
+          setList(data.hits);
+        });
     }
-    fetch(
-      `http://hn.algolia.com/api/v1/${search}?tags=${tag}&query=${searchInput}&numericFilters=created_at_i>${timeStampL}`
-      // `http://hn.algolia.com/api/v1/${search}?tags=${tag}&query=${searchInput}&numericFilters=created_at_i>${timeStampL},created_at_i<${timeStampG}`
-    )
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        console.log(data.hits);
-        setList(data.hits);
-      });
-  }, [searchInput, date, type, timeOrPop, tag, search, timeStampG, timeStampL]);
+  }, [
+    searchInput,
+    search,
+    date,
+    type,
+    timeOrPop,
+    tag,
+    timeStampG,
+    timeStampL,
+    // timeStamp,
+  ]);
 
   return (
-    <div className="App">
+    <div>
       <Header state={searchInput} setState={setSearchInput} />
       <SelectMenu
         setType={setType}
@@ -87,7 +99,7 @@ function App() {
         type={type}
         date={date}
         timeOrPop={timeOrPop}
-        setDate={setDate}
+        // setTimeStamp={setTimeStamp}
       />
     </div>
   );
