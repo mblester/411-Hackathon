@@ -8,7 +8,7 @@ export default function Body(props) {
     <div className="app-container">
       {props.list.map((item, index) => {
         let time = moment(item.created_at).fromNow();
-        console.log(new Date(item.created_at).getTime(), Date.now());
+        // console.log(new Date(item.created_at).getTime(), Date.now());
         return (
           <div className="div-display-container" key={index}>
             <article className="story-container">
@@ -49,12 +49,3 @@ export default function Body(props) {
     </div>
   );
 }
-
-// const dateToStr = item.created_at.toString();
-// const date = new Date(dateToStr);
-// console.log(date, dateToStr, momentDate);
-// const compareFullYear = date.getUTCFullYear();
-// const currDate = new Date();
-// const currYear = currDate.getFullYear();
-// const renderYears = currYear - compareFullYear;
-// console.log(renderYears);

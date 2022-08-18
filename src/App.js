@@ -10,7 +10,6 @@ function App() {
   const [date, setDate] = useState("all");
   const [timeOrPop, setTimeOrPop] = useState("Popularity");
   const [type, setType] = useState("story");
-  // const [timeStamp, setTimeStamp] = useState[0];
 
   let search = "";
   let timeStampG = 0;
@@ -39,15 +38,7 @@ function App() {
   // }
 
   useEffect(() => {
-    console.log(
-      date,
-      type,
-      timeOrPop,
-      searchInput,
-      // timeStamp,
-      timeStampL,
-      timeStampG
-    );
+    console.log(date, type, timeOrPop, searchInput, timeStampL, timeStampG);
 
     if (searchInput) {
       fetch(
@@ -74,17 +65,7 @@ function App() {
           setList(data.hits);
         });
     }
-  }, [
-    searchInput,
-    search,
-    date,
-    type,
-    timeOrPop,
-    tag,
-    timeStampG,
-    timeStampL,
-    // timeStamp,
-  ]);
+  }, [searchInput, search, date, type, timeOrPop, tag, timeStampG, timeStampL]);
 
   return (
     <div>
@@ -94,13 +75,7 @@ function App() {
         setDate={setDate}
         setTimeOrPop={setTimeOrPop}
       />
-      <Body
-        list={list}
-        type={type}
-        date={date}
-        timeOrPop={timeOrPop}
-        // setTimeStamp={setTimeStamp}
-      />
+      <Body list={list} type={type} date={date} timeOrPop={timeOrPop} />
     </div>
   );
 }

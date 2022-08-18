@@ -1,9 +1,6 @@
 * {
   box-sizing: border-box;
 }
-.App {
-  /* text-align: center; */
-}
 
 .header {
   background-color: #ff742a;
@@ -111,13 +108,8 @@ body {
   margin-top: 10px;
   margin-right: 0;
   margin-left: 4.9%;
-
-  /* align-items: center;
   font-size: 14px;
   text-align: left;
-  padding: 0 4px 0 8px;
-  margin: 0 8px 0 2px;
-  border: 1px solid #c3c3c3;
   border-radius: 2px;
   cursor: pointer;
   outline: none;
@@ -125,7 +117,7 @@ body {
   text-align: right;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; */
+  text-overflow: ellipsis;
 }
 
 .div-display-container {
@@ -140,7 +132,6 @@ body {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  /* align-items: left; */
 }
 
 .header-url-container {
